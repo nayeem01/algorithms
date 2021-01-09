@@ -1,6 +1,3 @@
-let arr = [3, 5, -4, 8, 11, 1, -1, 6];
-terget = 10;
-
 // solution 1
 // o(n) and space o(n)
 const sum = (arr, t) => {
@@ -23,13 +20,13 @@ const sum = (arr, t) => {
 // o(nlogn) and space o(1)
 const sumb = (arr, t) => {
     arr.sort((a, b) => a - b);
-
+    console.log(arr);
     left = 0;
     right = arr.length - 1;
     while (left < right) {
         currentnum = arr[left] + arr[right];
         if (currentnum == t) {
-            return [arr[left], arr[right]];
+            return [left, right];
         } else if (currentnum < t) {
             left++;
         } else {
@@ -38,4 +35,6 @@ const sumb = (arr, t) => {
     }
     return [];
 };
+arr = [3, 2, 4];
+terget = 6;
 console.log(sumb(arr, terget));
